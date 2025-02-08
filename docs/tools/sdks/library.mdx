@@ -3,15 +3,22 @@ title: "SDK Library"
 sidebar_position: 10
 ---
 
-Interact with the Stellar network using the SDK in your preferred language. The JavaScript, Go, and Rust SDKs are maintained by SDF and the rest are maintained by dedicated community developers. All SDKs are open-source; file a GitHub issue or pull request in the specific SDK repository if you have questions or suggestions.
+The list of SDKs is separated into two categories:
 
-Each SDK has its own source code and documentation. Learn how to use a specific SDK by referring to the documentation- most docs offer practical examples that demonstrate how to construct and submit transactions and interact with Horizon endpoints.
+- Contract SDKs (used to build and interact with smart contracts on the network), and
+- Client & XDR SDKs (used by applications to interact with the network)
+
+The JavaScript, Go, and Rust SDKs are maintained by SDF. The rest SDK are maintained by dedicated community developers. All SDKs are open-source; file a GitHub issue or pull request in the specific SDK repository if you have questions or suggestions.
+
+Each SDK has its own source code and documentation. Learn how to use a specific SDK by referring to the documentation.
+
+## Contract SDKs
 
 ### Soroban Rust SDK
 
 [Rust SDK](https://github.com/stellar/rs-soroban-sdk) | [Docs](https://docs.rs/soroban-sdk)
 
-The `soroban-sdk` Rust crate contains the Soroban Rust SDK.
+Also known as the Smart Contract SDK. The `soroban-sdk` Rust crate contains the Soroban Rust SDK for building smart contracts on Stellar.
 
 Report issues and share feedback about the `soroban-sdk` [here](https://github.com/stellar/rs-soroban-sdk/issues/new/choose).
 
@@ -35,11 +42,13 @@ The `as-soroban-sdk` is an open source SDK that supports writing programs for th
 
 The AssemblyScript Soroban SDK is maintained by dedicated community developer, Soneso. Report issues and share feedback [here](https://github.com/Soneso/as-soroban-sdk/issues/new).
 
+## Client & XDR SDKs
+
 ### JavaScript SDK
 
 [JavaScript SDK](https://github.com/stellar/js-stellar-sdk) | [Docs](https://stellar.github.io/js-stellar-sdk/) | [NPM](https://www.npmjs.com/package/@stellar/stellar-sdk)
 
-`stellar-sdk` is the JavaScript library for communicating with a Stellar RPC server, communicating with the Horizon API, and building transactions on the Stellar network. It is used for building Stellar apps either on Node.js or in the browser.
+`stellar-sdk` is the JavaScript library for communicating with Stellar RPC and Horizon. It supports building transactions on the Stellar network. It is used for building Stellar apps either in the browser or a Node.js environment.
 
 It provides:
 
@@ -58,6 +67,22 @@ It provides:
 
 - A networking layer API for Horizon endpoints.
 - Facilities for building and signing transactions, for communicating with a Stellar Horizon instance, and for submitting transactions or querying network history.
+
+### Rust
+
+Functionality for interacting with Stellar data can be found in the following Rust crates:
+
+- `stellar-xdr` – [Code](https://github.com/stellar/rs-stellar-xdr) | [Docs](https://docs.rs/stellar-xdr)
+
+  Provides [XDR] encode/decode and the reference implementation of [XDR-JSON].
+
+- `stellar-strkey` – [Code](https://github.com/stellar/rs-stellar-strkey) | [Docs](https://docs.rs/stellar-strkey)
+
+  Provides Stellar Strkey (Address) [SEP-23] encoding/decoding.
+
+[XDR]: ../../learn/encyclopedia/data-format/xdr
+[XDR-JSON]: ../../learn/encyclopedia/data-format/xdr#json-and-xdr-conversion-schema
+[SEP-23]: https://github.com/stellar/stellar-protocol/blob/master/ecosystem/sep-0023.md
 
 ### iOS SDK
 
